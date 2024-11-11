@@ -3,14 +3,14 @@ FROM alpine:latest
 LABEL maintainer="dselen@nerthus.nl"
 
 # Определение переменных окружения
-ARG wg_net="10.0.0.1"
-ARG wg_port="51820"
+ARG wg_net="10.10.7.1"
+ARG wg_port="19273"
 
 # Переменные окружения, которые можно изменить во время выполнения контейнера
 ENV TZ="Europe/Amsterdam"
-ENV global_dns="1.1.1.1"
+ENV global_dns="8.8.8.8"
 ENV isolate="none"
-ENV public_ip="0.0.0.0"
+ENV public_ip="82.209.221.67"
 ENV WGDASH=/opt/wireguarddashboard
 
 # Установка необходимых пакетов

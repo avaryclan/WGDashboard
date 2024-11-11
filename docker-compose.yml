@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:10086"  # Перенаправляем порт 10086 на 5000 или любой другой порт
     environment:
-      - TZ=Europe/Amsterdam
+      - TZ=Europe/Minsk
       - global_dns=8.8.8.8
       - public_ip=82.209.221.67
       - WG_DASHBOARD_USERNAME=admin  # Учетные данные по умолчанию

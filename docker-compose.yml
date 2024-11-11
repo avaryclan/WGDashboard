@@ -16,4 +16,6 @@ services:
       - ./data:/data                      # Том для хранения данных
       - ./configs:/configs                # Том для конфигураций WireGuard
       - ./db:/opt/wireguarddashboard/db   # Том для базы данных WGDashboard
+    cap_add:
+      - NET_ADMIN                         # Добавляем возможность управлять сетью
     restart: always                       # Автоматический перезапуск контейнера при сбое или перезагрузке

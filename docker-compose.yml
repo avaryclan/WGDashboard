@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  wgdashboard:
+    build: .
+    container_name: wgdashboard
+    ports:
+      - "5000:10086"  # Перенаправляем порт 10086 на 5000 или любой другой порт
+    environment:
+      - TZ=Europe/Amsterdam
+      - global_dns=8.8.8.8
+      - public_ip=82.209.221.67
+      - WG_DASHBOARD_USERNAME=admin  # Учетные данные по умолчанию
+      - WG_DASHBOARD_PASSWORD=AGL378asd!@#
+    volumes:
+      - ./data:/data                      # Том для хранения данных
+      - ./configs:/configs                # Том для конфигураций WireGuard
+      - ./db:/opt/wireguarddashboard/db   # Том для базы данных WGDashboard
+    restart: always                       # Автоматический перезапуск контейнера при сбое или перезагрузке
